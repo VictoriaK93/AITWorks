@@ -18,13 +18,5 @@ public class LibraryImpl implements Library {
         return null;
     }
 
-    @Override
-    public List<Book> findBooksByAuthor(String author) {
-        return null;
-    }
-
-    @Override
-    public List<Book> getAllBooks() {
-        return null;
-    }
 }
+

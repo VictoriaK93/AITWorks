@@ -1,8 +1,8 @@
-package tests;
+package classwork_37.album.dao.tests;
 
-import dao.Album;
-import dao.AlbumImpl;
-import model.Photo;
+import classwork_37.album.dao.Album;
+import classwork_37.album.dao.AlbumImpl;
+import classwork_37.album.dao.model.Photo;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -38,7 +38,7 @@ class AlbumImplTest {
         // foreach
         for (Photo p : ph) {
             album.addPhoto(p);
-            System.out.println(p);
+            // System.out.println(p);
         }
     }
 

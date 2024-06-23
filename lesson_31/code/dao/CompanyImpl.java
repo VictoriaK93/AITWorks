@@ -1,21 +1,26 @@
 package dao;
 
+
 import classwork_31.model.Employee;
-import classwork_32.company.dao.Company;
 
-public class CompanyImpl implements Company {
+public class CompanyImpl implements Company{
+
     // fields
-     private Employee[] employees;
-     private int size;
+    private Employee[] employees;
+    private int size;
 
-     // constructor
+    // конструктор
     public CompanyImpl(int capacity) {
         employees = new Employee[capacity];
     }
 
     @Override
     public boolean addEmployee(Employee employee) {
-        return false;
+        if(employee == null || size == employees.length || findEmployee(employee.getId()) != null) {
+            return false;
+        }
+        employees[size++] = employee;
+        return true;
     }
 
     @Override
@@ -25,6 +30,11 @@ public class CompanyImpl implements Company {
 
     @Override
     public Employee findEmployee(int id) {
+        for (int i = 0; i < size; i++) {
+            if(employees[i].getId() == id){
+                return employees[i];
+            }
+        }
         return null;
     }
 

@@ -33,5 +33,10 @@ package classwork_32.company.model;
             double salary = salesRevenue * percent;
             return salary;
         }
+
+        @Override
+        public void getSecondName(String secondName) {
+
+        }
     }
 

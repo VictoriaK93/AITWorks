@@ -1,6 +1,6 @@
-package dao;
+package classwork_37.album.dao;
 
-import model.Photo;
+import classwork_37.album.dao.model.Photo;
 
 import java.time.LocalDate;
 

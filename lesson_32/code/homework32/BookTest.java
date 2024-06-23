@@ -20,13 +20,13 @@ import static org.junit.jupiter.api.Assertions.*;
         void testGettersAndSetters() {
             Book book = new Book(1234, "Java для начинающих", "Иван Иванов", "Программирование");
 
-            book.getTitle("Python для начинающих");
+            book.getTitle();
             assertEquals("Python для начинающих", book.getTitle());
 
-            book.getAuthor("Петр Петров");
+            book.getAuthor();
             assertEquals("Петр Петров", book.getAuthor());
 
-            book.getGenre("Web-разработка");
+            book.getGenre();
             assertEquals("Web-разработка", book.getGenre());
         }
 

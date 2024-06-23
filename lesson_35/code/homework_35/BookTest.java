@@ -3,6 +3,9 @@ package homework_35;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+import java.util.Comparator;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class BookTest {
@@ -25,8 +28,32 @@ class BookTest {
             System.out.println(o);
         }
     }
-
-
-
-
+    @Test
+    void testPrint(){
+        printArray(books, "List of our books that we placed in our setUp method");
     }
+
+    @Test
+    void testNativeSorting(){
+        printArray(books, "List of our books that we placed in our setUp method");
+        Arrays.sort(books); // native sorting
+        printArray(books, "List of books sorted by author");
+    }
+
+    @Test
+    void testComparator() {
+        // Comparator<Book> comparator = (b1, b2) -> b1.getYearOfPublishing() - b2.getYearOfPublishing();
+        Comparator<Book> comparator1 = (b1, b2) -> Integer.compare(b1.getYearOfPublishing(), b2.getYearOfPublishing());
+        // lambda expression
+        printArray(books, "Before sorting");
+        Arrays.sort(books); // native sorting
+        printArray(books, "After sorting by Author AND THEN by YearOfPublishing");
+        Arrays.sort(books, comparator1);
+        printArray(books, "After sorting by year of publishing");
+    }
+}
+
+
+
+
+

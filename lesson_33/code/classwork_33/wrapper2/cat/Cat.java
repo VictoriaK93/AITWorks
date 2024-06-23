@@ -1,22 +1,27 @@
 package classwork_33.wrapper2.cat;
 
+
 import java.util.Objects;
 
 public class Cat implements Comparable<Cat>{
-    // этот метод сравнивает текущий обьект и Cat o
+    // этот метод сравнивает текущий объект и Cat o
+    @Override
+    public int compareTo(Cat o) {
+        int res = this.age - o.age; // сравнение объектов по полю age
+        return res;
+    }
 
-
-    private int id ;
-    private String name;
-    private String bread;
+    private int id;
+    private  String name;
+    private String breed;
     private int age;
     private double weight;
 
-    public Cat(int id, String name, String bread, int age, double weight) {
 
+    public Cat(int id, String name, String breed, int age, double weight) {
         this.id = id;
         this.name = name;
-        this.bread = bread;
+        this.breed = breed;
         this.age = age;
         this.weight = weight;
     }
@@ -37,12 +42,12 @@ public class Cat implements Comparable<Cat>{
         this.name = name;
     }
 
-    public String getBread() {
-        return bread;
+    public String getBreed() {
+        return breed;
     }
 
-    public void setBread(String bread) {
-        this.bread = bread;
+    public void setBreed(String breed) {
+        this.breed = breed;
     }
 
     public int getAge() {
@@ -66,7 +71,7 @@ public class Cat implements Comparable<Cat>{
         return "Cat{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", bread='" + bread + '\'' +
+                ", breed='" + breed + '\'' +
                 ", age=" + age +
                 ", weight=" + weight +
                 '}';
@@ -75,18 +80,13 @@ public class Cat implements Comparable<Cat>{
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if ((o == null || getClass() != o.getClass())) return false;
+        if (!(o instanceof Cat cat)) return false;
         return id == cat.id;
     }
 
     @Override
-    public int hashCode() {return id;}
-    // этот метод позволяет проводить сравнение обьектов этого класса
-    // он сравнивает текущий
-
-    @Override
-    public int compareTo(Cat o) {
-        int res = this.age - o.age; // сравнение обьектов по полю age
-        return res;
+    public int hashCode() {
+        return Objects.hashCode(id);
     }
+
 }

@@ -1,14 +1,18 @@
 package homework_34;
 
+import java.time.LocalDateTime;
+
 public class Task implements Comparable<Task> {
         private int id;
         private String task;
         private int taskNumber;
+        private LocalDateTime createdAt;
 
         public Task(int id, String task, int taskNumber) {
             this.id = id;
             this.task = task;
             this.taskNumber = taskNumber;
+            this.createdAt = LocalDateTime.now();
         }
 
         public int getId() {
@@ -33,6 +37,13 @@ public class Task implements Comparable<Task> {
 
         public void setTaskNumber(int taskNumber) {
             this.taskNumber = taskNumber;
+        }
+        public LocalDateTime getCreatedAt() {
+          return createdAt;
+        }
+
+        public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
         }
 
         @Override

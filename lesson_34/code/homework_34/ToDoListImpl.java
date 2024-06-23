@@ -24,7 +24,7 @@ public class ToDoListImpl implements ToDoList {
 
     @Override
     public void deleteEntry(int number) {
-        int index = number - 1; // Adjust for zero-based indexing
+        int index = number - 1; // Ad just for zero-based indexing
         if (index >= 0 && index < tasks.size()) {
             tasks.remove(index);
             // Update task numbers after deletion for sorting

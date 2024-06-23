@@ -1,4 +1,4 @@
-package model;
+package classwork_37.album.dao.model;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
@@ -70,7 +70,7 @@ public class Photo implements Comparable<Photo> {
 
     @Override
     public int hashCode() {
-        return Objects.hash(albumId, photoId, title, url, date);
+        return Objects.hash(albumId, photoId);
     }
 
     @Override
