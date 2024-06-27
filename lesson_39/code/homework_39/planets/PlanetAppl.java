@@ -45,7 +45,7 @@ import java.util.List;
                 System.out.println(p);
             }
 
-            // далее по аналогии
+
 
         }
     }
