@@ -18,6 +18,8 @@ public class Car {
         this.color = color;
     }
 
+
+
     public String getRegNumber() {
         return regNumber;
     }
